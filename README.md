@@ -89,10 +89,10 @@
 
 ### Part 6.0 - Create `People`
 * Create an abstract `People` class
-	* The class signature should be parameterized with `PersonType` such that `PersonType` is a sub class of `Person`.
-	* The class should implement `Iterable` of type `PersonType`.
-	* Upon construction `People` should consume a `List` of `PersonType` and set it to a respective `personList` field.
-	* The class should define a constructor which consumes a variable number of `PersonType` objects and sets the `personList` field respectively.
+	1* The class signature should be parameterized with `PersonType` such that `PersonType` is a sub class of `Person`.
+	2* The class should implement `Iterable` of type `PersonType`.
+	3* Upon construction `People` should consume a `List` of `PersonType` and set it to a respective `personList` field.
+	4* The class should define a constructor which consumes a variable number of `PersonType` objects and sets the `personList` field respectively.
 	* The class should define a method named `add` which adds a `PersonType` to the `personList`.
 	* The class should define a method named `remove` which removes a `PersonType` from the `personList`.
 	* The class should define a method named `size` which returns the size of `personList`.
