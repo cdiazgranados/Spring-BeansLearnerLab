@@ -2,6 +2,7 @@ package com.zipcode.rocks.bean;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class InstructorsConfig {
     public Instructors tcUkInstructors(List<Instructor> tcUk) {
         return new Instructors(tcUk);
     }
-
+    @Primary
     @Bean(name = "instructors")
     public Instructors instructors(List<Instructor> zipcode) {
         return new Instructors(zipcode);
