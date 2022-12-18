@@ -11,6 +11,9 @@ public class Instructors extends People<Instructor> {
         super(personList);
     }
 
+    public Instructors() {
+    }
+
     @Override
     public Iterator<Instructor> iterator() {
         return null;

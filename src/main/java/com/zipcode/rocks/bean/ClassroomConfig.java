@@ -13,12 +13,12 @@ public class ClassroomConfig {
     @Autowired
     StudentConfig studentConfig;
     @Bean
-    public Classroom currentCohort(List<Instructor> instructors, List<Student> students) {
-        return new Classroom(instructorsConfig.instructors(instructors), studentConfig.currentStudents(students));
+    public Classroom currentCohort() {
+        return new Classroom(instructorsConfig.instructors(), studentConfig.currentStudents());
     }
 
     @Bean
-    public Classroom previousCohort(List<Instructor> instructors, List<Student> students) {
-        return new Classroom(instructorsConfig.instructors(instructors), studentConfig.previousStudents(students));
+    public Classroom previousCohort() {
+        return new Classroom(instructorsConfig.instructors(), studentConfig.previousStudents());
     }
 }
