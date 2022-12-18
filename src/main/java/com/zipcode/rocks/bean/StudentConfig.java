@@ -24,7 +24,7 @@ public class StudentConfig {
         return currentStudents;
     }
 
-    @Bean
+    @Bean(name = "previousStudents")
     public Students previousStudents(){
         Students previousStudents = new Students();
         previousStudents.add(new Student(5L, "Freddy"));

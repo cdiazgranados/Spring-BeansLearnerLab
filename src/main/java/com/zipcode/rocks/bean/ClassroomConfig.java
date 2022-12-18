@@ -8,17 +8,33 @@ import java.util.List;
 
 @Configuration
 public class ClassroomConfig {
-    @Autowired
-    InstructorsConfig instructorsConfig;
-    @Autowired
-    StudentConfig studentConfig;
+
+
     @Bean
     public Classroom currentCohort() {
-        return new Classroom(instructorsConfig.instructors(), studentConfig.currentStudents());
+        Students currentStudents = new Students();
+        currentStudents.add(new Student(1L, "Zach"));
+        currentStudents.add(new Student(3L, "Emory"));
+        currentStudents.add(new Student(5L, "Freddy"));
+        Instructors instructors = new Instructors();
+        instructors.add(new Instructor(1L, "Solow"));
+        instructors.add(new Instructor(2L, "Starkweather"));
+
+        Classroom classroom = new Classroom(instructors, currentStudents);
+        return classroom;
     }
 
     @Bean
     public Classroom previousCohort() {
-        return new Classroom(instructorsConfig.instructors(), studentConfig.previousStudents());
+        Students currentStudents = new Students();
+        currentStudents.add(new Student(1L, "Zach"));
+        currentStudents.add(new Student(3L, "Emory"));
+        currentStudents.add(new Student(5L, "Freddy"));
+        Instructors instructors = new Instructors();
+        instructors.add(new Instructor(1L, "Solow"));
+        instructors.add(new Instructor(2L, "Starkweather"));
+
+        Classroom classroom = new Classroom(instructors, currentStudents);
+        return classroom;
     }
 }

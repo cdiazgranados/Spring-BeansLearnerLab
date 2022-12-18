@@ -16,9 +16,21 @@ public class TestClassroomConfig {
     @Autowired
     ClassroomConfig classroomConfig;
 
+    @Test
+    @Qualifier("currentCohort")
     public void testClassroomConfig() {
-        int expected = 1;
+        int expected = 2;
         Classroom config = classroomConfig.currentCohort();
-//        Assert.assertEquals(expected, config.size());
+        config.getInstructors();
+        Assert.assertEquals(expected, config.getInstructors().size());
+    }
+
+    @Test
+    @Qualifier("previousCohort")
+    public void testClassroomConfig1() {
+        int expected = 3;
+        Classroom config = classroomConfig.previousCohort();
+        config.getInstructors();
+        Assert.assertEquals(expected, config.getStudents().size());
     }
 }

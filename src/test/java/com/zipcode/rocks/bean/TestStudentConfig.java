@@ -35,7 +35,7 @@ public class TestStudentConfig {
 
 
 
-        int expected = 1;
+        int expected = 3;
         Students config = studentConfig.currentStudents();
         System.out.println("Students created in class: " + config.toString());
         System.out.println(config.size());
